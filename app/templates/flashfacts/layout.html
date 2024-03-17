@@ -19,6 +19,15 @@
     <link rel="apple-touch-icon" href="{% static 'flashfacts/images/flashfacts.webp' %}">
     {% block script %}
     {% endblock %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCFER7H0T0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HCFER7H0T0');
+    </script>
 </head>
 <body>
     <div class="flex-wrapper">
