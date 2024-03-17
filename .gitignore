@@ -1,0 +1,6 @@
+db.sqlite3
+flashfacts/app/__pycache__
+flashfacts/app/migrations/__pycache__
+flashfacts/flashfacts/__pycache__
+flashfacts/public
+flashfacts/venv

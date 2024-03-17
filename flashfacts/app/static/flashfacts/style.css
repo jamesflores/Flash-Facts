@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.date-highlight {
+    font-weight: bold;
+    color: black;
+}
+
+.fact-text {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.flash-facts-title {
+    margin-bottom: 30px;
+}

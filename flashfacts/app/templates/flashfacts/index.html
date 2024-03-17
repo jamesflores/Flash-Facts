@@ -1,0 +1,40 @@
+{% extends "flashfacts/layout.html" %}
+{% load static %}
+
+{% block title %} Flash Facts | {{ month_name }} {{ day }}{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row justify-content mb-3">
+        <div class="col-md-6">
+            <h2 class="flash-facts-title">Flash Facts</h2>
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% else %}
+                <p class="fact-text">
+                    On <span class="date-highlight">{{ month_name }} {{ day }}, {{ year }}</span>, {{ fact }}.
+                </p>
+                <div class="navigation-buttons mt-4 mb-4">
+                    <a href="{% url 'index' prev_day.month prev_day.day %}" class="btn btn-outline-primary">
+                        <i class="bi bi-arrow-left"></i> Previous Day
+                    </a>                
+                    <a href="{% url 'index' today_month today_day %}" class="btn btn-outline-secondary">Today</a>
+                    <a href="{% url 'index' next_day.month next_day.day %}" class="btn btn-outline-primary">
+                        Next Day <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        {% if not error %}
+            <div class="col-md-6">
+                <figure>
+                    <img src="{{ image }}" class="img-fluid" alt="Flash Facts">
+                    <figcaption class="figure-caption">This <a href="{{ image_url }}" target="_blank">photo</a> was taken by <a href="{{ photographer_url }}" target="_blank">{{ photographer }}</a> on Pexels.</figcaption>
+                </figure>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
