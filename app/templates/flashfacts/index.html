@@ -1,7 +1,9 @@
 {% extends "flashfacts/layout.html" %}
 {% load static %}
 
-{% block title %} Flash Facts | {{ month_name }} {{ day }}{% endblock %}
+{% block title %} Flash Facts | On {{ month_name }} {{ day }}, {{ year }}, {{ fact }}.{% endblock %}
+{% block share_title %} Flash Facts | On {{ month_name }} {{ day }}, {{ year }}, {{ fact }}.{% endblock %}
+{% block share_image %}{{ image }}{% endblock %}
 
 {% block body %}
 <div class="container my-5">
@@ -20,7 +22,7 @@
                     <a href="{% url 'index' prev_day.month prev_day.day %}" class="btn btn-outline-primary">
                         <i class="bi bi-arrow-left"></i> Previous Day
                     </a>                
-                    <a href="{% url 'index' today_month today_day %}" class="btn btn-outline-secondary">Today</a>
+                    <a href="{% url 'index' today_month today_day %}" class="btn btn-outline-success">Today</a>
                     <a href="{% url 'index' next_day.month next_day.day %}" class="btn btn-outline-primary">
                         Next Day <i class="bi bi-arrow-right"></i>
                     </a>
